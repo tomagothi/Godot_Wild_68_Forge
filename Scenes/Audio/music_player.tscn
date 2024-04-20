@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://bh3hs7nhfosg6"]
+
+[ext_resource type="Script" path="res://Scenes/Audio/sound_player.gd" id="1_uriow"]
+
+[node name="MusicPlayer" type="Node"]
+script = ExtResource("1_uriow")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"Music"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+bus = &"Music"
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="."]
+bus = &"Music"
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="."]
+bus = &"Music"

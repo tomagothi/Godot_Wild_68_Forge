@@ -1,0 +1,228 @@
+[gd_scene load_steps=25 format=3 uid="uid://dcnu7ievmbuha"]
+
+[ext_resource type="Script" path="res://Scenes/Areas/merchant_shop.gd" id="1_bdu0b"]
+[ext_resource type="TileSet" uid="uid://c2h3tko2c2wyi" path="res://Scenes/Areas/tiny_dungeon_tileset.tres" id="1_gabrl"]
+[ext_resource type="PackedScene" uid="uid://ccle1kdjiiulj" path="res://Scenes/UI/notification.tscn" id="2_7t6jh"]
+[ext_resource type="Texture2D" uid="uid://b5qbfeogpshim" path="res://Assets/Art/blacksmith.png" id="2_ytild"]
+[ext_resource type="Texture2D" uid="uid://br8w406b8pltd" path="res://Assets/Art/male_wizard.png" id="3_0xb8h"]
+[ext_resource type="Script" path="res://Scenes/Areas/merchant_inventory.gd" id="5_1uqg2"]
+[ext_resource type="PackedScene" uid="uid://bcbssyuqlxkhc" path="res://Scenes/UI/sellable_item.tscn" id="5_5we8a"]
+[ext_resource type="Resource" uid="uid://q6ju1hulfnkv" path="res://Resources/Items/CraftingMaterials/iron_ingot.tres" id="6_3hrcr"]
+[ext_resource type="FontFile" uid="uid://bowq5l47wqgxq" path="res://Assets/Fonts/Kenney Pixel.ttf" id="6_5is7o"]
+[ext_resource type="Resource" uid="uid://biw430ngyy8nq" path="res://Resources/Items/CraftingMaterials/wood.tres" id="7_ygmco"]
+[ext_resource type="Resource" uid="uid://bt3iguxqreo75" path="res://Resources/Recipes/ItemRecipes/long_sword_item_recipe.tres" id="8_dbkev"]
+[ext_resource type="Resource" uid="uid://crkq0alaelnt1" path="res://Resources/Recipes/ItemRecipes/pick_axe_item_recipe.tres" id="9_8524v"]
+[ext_resource type="Resource" uid="uid://c02r0c7xfihuk" path="res://Resources/Recipes/ItemRecipes/hand_axe_item_recipe.tres" id="10_nx6fv"]
+[ext_resource type="Resource" uid="uid://b7rq4dwceysrw" path="res://Resources/Recipes/ItemRecipes/battle_axe_item_recipe.tres" id="11_1njun"]
+[ext_resource type="Resource" uid="uid://btf3ybec3jcg1" path="res://Resources/Items/CraftingMaterials/silver_ingot.tres" id="12_o6jrm"]
+[ext_resource type="Resource" uid="uid://d3b6xxokgjx6u" path="res://Resources/Recipes/ItemRecipes/great_sword_item_recipe.tres" id="13_d27cs"]
+[ext_resource type="Resource" uid="uid://vevnfhly6lij" path="res://Resources/Items/CraftingTools/mystic_blacksmith_hammer.tres" id="14_84mmj"]
+[ext_resource type="Resource" uid="uid://dbwgoq6gyogcb" path="res://Resources/Items/CraftingMaterials/mystic_ingot.tres" id="15_33f6n"]
+[ext_resource type="Resource" uid="uid://jitfuks7msjf" path="res://Resources/Recipes/ItemRecipes/mystic_sword_item_recipe.tres" id="16_8tlfj"]
+[ext_resource type="Texture2D" uid="uid://pkltqtiete7e" path="res://Assets/UI/panel_beige.png" id="19_6m7uk"]
+[ext_resource type="Texture2D" uid="uid://dtqyarqncaa60" path="res://Assets/UI/buttonRound_beige.png" id="20_67con"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_idqej"]
+font = ExtResource("6_5is7o")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vckkc"]
+font = ExtResource("6_5is7o")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nertx"]
+font = ExtResource("6_5is7o")
+font_color = Color(0, 0, 0, 1)
+
+[node name="MerchantShop" type="Node2D"]
+script = ExtResource("1_bdu0b")
+notification_scene = ExtResource("2_7t6jh")
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2(2, 2)
+tile_set = ExtResource("1_gabrl")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 65536, 0, 15, 196608, 0, 524303, 196608, 2, 524288, 65536, 2, 65536, 65536, 1, 131072, 65536, 1, 196608, 65536, 1, 262144, 65536, 1, 327680, 65536, 1, 393216, 65536, 1, 458752, 65536, 1, 65551, 196608, 1, 131087, 196608, 1, 196623, 196608, 1, 262159, 196608, 1, 327695, 196608, 1, 393231, 196608, 1, 458767, 196608, 1, 1, 131072, 0, 2, 131072, 0, 3, 131072, 0, 4, 131072, 0, 5, 131072, 0, 6, 131072, 0, 7, 131072, 0, 8, 131072, 0, 9, 131072, 0, 10, 131072, 0, 11, 131072, 0, 12, 131072, 0, 13, 131072, 0, 14, 131072, 0, 524289, 131072, 2, 524290, 131072, 2, 524291, 131072, 2, 524292, 131072, 2, 524293, 131072, 2, 524294, 131072, 2, 524295, 131072, 2, 524296, 131072, 2, 524297, 131072, 2, 524298, 131072, 2, 524299, 131072, 2, 524300, 131072, 2, 524301, 131072, 2, 524302, 131072, 2, 65537, 262144, 3, 65538, 262144, 3, 65539, 262144, 3, 65540, 262144, 3, 65541, 262144, 3, 65542, 262144, 3, 65543, 262144, 3, 65544, 262144, 3, 65545, 262144, 3, 65546, 262144, 3, 65547, 262144, 3, 65548, 589824, 3, 65549, 262144, 3, 65550, 262144, 3, 327685, 0, 4, 262149, 0, 4, 196613, 0, 4, 131077, 131072, 4, 131076, 131072, 4, 131075, 131072, 4, 131074, 131072, 4, 131073, 131072, 4, 196609, 0, 4, 262145, 0, 4, 327681, 0, 4, 393217, 0, 4, 458753, 0, 4, 458754, 0, 4, 393218, 0, 4, 327682, 0, 4, 262146, 0, 4, 196610, 0, 4, 196611, 0, 4, 262147, 0, 4, 327683, 0, 4, 393219, 0, 4, 458755, 0, 4, 458756, 0, 4, 393220, 0, 4, 327684, 0, 4, 262148, 0, 4, 196612, 0, 4, 393221, 0, 4, 458757, 0, 4, 458758, 0, 4, 393222, 0, 4, 327686, 0, 4, 262150, 0, 4, 196614, 0, 4, 131078, 131072, 4, 131079, 131072, 4, 196615, 0, 4, 262151, 0, 4, 327687, 0, 4, 393223, 0, 4, 458759, 0, 4, 458760, 0, 4, 393224, 0, 4, 327688, 0, 4, 262152, 0, 4, 196616, 0, 4, 131080, 131072, 4, 131081, 131072, 4, 196617, 0, 4, 262153, 0, 4, 327689, 0, 4, 393225, 0, 4, 458761, 0, 4, 458762, 0, 4, 393226, 0, 4, 327690, 0, 4, 262154, 0, 4, 196618, 0, 4, 131082, 131072, 4, 131083, 131072, 4, 196619, 0, 4, 262155, 0, 4, 327691, 0, 4, 393227, 0, 4, 458763, 0, 4, 458764, 0, 4, 393228, 0, 4, 327692, 0, 4, 262156, 0, 4, 196620, 0, 4, 131084, 131072, 4, 131085, 131072, 4, 196621, 0, 4, 262157, 0, 4, 327693, 0, 4, 393229, 0, 4, 458765, 0, 4, 458766, 0, 4, 393230, 0, 4, 327694, 0, 4, 262158, 0, 4, 196622, 0, 4, 131086, 131072, 4)
+layer_1/tile_data = PackedInt32Array(196618, 0, 6)
+
+[node name="PlayerSprite" type="Sprite2D" parent="."]
+position = Vector2(434, 110)
+scale = Vector2(2, 2)
+texture = ExtResource("2_ytild")
+flip_h = true
+
+[node name="MerchantSprite" type="Sprite2D" parent="."]
+position = Vector2(304, 112)
+scale = Vector2(2, 2)
+texture = ExtResource("3_0xb8h")
+
+[node name="MerchantInventory" type="CanvasLayer" parent="." groups=["MerchantInventory"]]
+script = ExtResource("5_1uqg2")
+starting_items = Array[Resource("res://Resources/Scripts/item.gd")]([ExtResource("6_3hrcr"), ExtResource("7_ygmco"), ExtResource("8_dbkev")])
+rep2_items = Array[Resource("res://Resources/Scripts/item.gd")]([ExtResource("9_8524v"), ExtResource("10_nx6fv")])
+rep3_items = Array[Resource("res://Resources/Scripts/item.gd")]([ExtResource("11_1njun"), ExtResource("12_o6jrm")])
+rep4_items = Array[Resource("res://Resources/Scripts/item.gd")]([ExtResource("13_d27cs"), ExtResource("14_84mmj")])
+rep5_items = Array[Resource("res://Resources/Scripts/item.gd")]([ExtResource("15_33f6n"), ExtResource("16_8tlfj")])
+
+[node name="Control" type="Control" parent="MerchantInventory"]
+custom_minimum_size = Vector2(512, 288)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MerchantInventory/Control"]
+custom_minimum_size = Vector2(188, 203)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 65.0
+offset_right = -18.0
+offset_bottom = -20.0
+grow_vertical = 2
+
+[node name="ItemsContainer" type="GridContainer" parent="MerchantInventory/Control/VBoxContainer"]
+custom_minimum_size = Vector2(188, 164)
+layout_mode = 2
+mouse_filter = 2
+columns = 3
+
+[node name="SellableItem" parent="MerchantInventory/Control/VBoxContainer/ItemsContainer" instance=ExtResource("5_5we8a")]
+layout_mode = 2
+
+[node name="SellableItem2" parent="MerchantInventory/Control/VBoxContainer/ItemsContainer" instance=ExtResource("5_5we8a")]
+layout_mode = 2
+one_time_purchase = true
+
+[node name="SellableItem3" parent="MerchantInventory/Control/VBoxContainer/ItemsContainer" instance=ExtResource("5_5we8a")]
+layout_mode = 2
+
+[node name="SellableItem4" parent="MerchantInventory/Control/VBoxContainer/ItemsContainer" instance=ExtResource("5_5we8a")]
+layout_mode = 2
+
+[node name="SellableItem5" parent="MerchantInventory/Control/VBoxContainer/ItemsContainer" instance=ExtResource("5_5we8a")]
+layout_mode = 2
+
+[node name="SellableItem6" parent="MerchantInventory/Control/VBoxContainer/ItemsContainer" instance=ExtResource("5_5we8a")]
+layout_mode = 2
+
+[node name="ItemInfoText" type="Label" parent="MerchantInventory/Control/VBoxContainer"]
+custom_minimum_size = Vector2(188, 24)
+layout_mode = 2
+label_settings = SubResource("LabelSettings_idqej")
+vertical_alignment = 1
+
+[node name="ExitButton" type="Button" parent="MerchantInventory"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(32, 32)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 384.0
+offset_top = -256.0
+offset_right = 416.0
+offset_bottom = -224.0
+grow_vertical = 0
+
+[node name="MerchantDialog" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Control" type="Control" parent="MerchantDialog"]
+custom_minimum_size = Vector2(512, 288)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MerchantChat" type="TextureRect" parent="MerchantDialog/Control"]
+custom_minimum_size = Vector2(225, 100)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -262.0
+offset_top = -158.0
+offset_right = -37.0
+offset_bottom = -58.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("19_6m7uk")
+expand_mode = 1
+
+[node name="ChatText" type="Label" parent="MerchantDialog/Control/MerchantChat"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 5.0
+offset_right = -10.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Greetings! Come, browse my wares!"
+label_settings = SubResource("LabelSettings_vckkc")
+autowrap_mode = 3
+
+[node name="PlayerGoldTexture" type="TextureRect" parent="MerchantDialog/Control"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -53.0
+offset_right = -40.0
+offset_bottom = -18.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("20_67con")
+
+[node name="GoldText" type="Label" parent="MerchantDialog/Control/PlayerGoldTexture"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "100g"
+label_settings = SubResource("LabelSettings_nertx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SaleNotification" type="ColorRect" parent="MerchantDialog/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -260.0
+offset_top = -55.0
+offset_right = -80.0
+offset_bottom = -30.0
+grow_horizontal = 0
+grow_vertical = 0
+color = Color(1, 1, 1, 0)
+
+[connection signal="mouse_entered" from="MerchantInventory/ExitButton" to="." method="_on_exit_button_mouse_entered"]
+[connection signal="mouse_exited" from="MerchantInventory/ExitButton" to="." method="_on_exit_button_mouse_exited"]
+[connection signal="pressed" from="MerchantInventory/ExitButton" to="." method="_on_exit_button_pressed"]

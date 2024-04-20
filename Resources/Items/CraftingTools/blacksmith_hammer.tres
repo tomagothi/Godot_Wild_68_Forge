@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://7jhmm4npu8sn"]
+
+[ext_resource type="Texture2D" uid="uid://clu660ivy7mf4" path="res://Assets/Art/hammer.png" id="1_ywimn"]
+[ext_resource type="Script" path="res://Resources/Scripts/item.gd" id="2_jam8x"]
+
+[resource]
+script = ExtResource("2_jam8x")
+display_name = "Blacksmith Hammer"
+item_icon = ExtResource("1_ywimn")
+base_cost = 15
+max_stack_size = 1
+item_type = 1

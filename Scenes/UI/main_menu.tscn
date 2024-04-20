@@ -1,0 +1,247 @@
+[gd_scene load_steps=15 format=3 uid="uid://bdr7wbmqat0rc"]
+
+[ext_resource type="TileSet" uid="uid://c2h3tko2c2wyi" path="res://Scenes/Areas/tiny_dungeon_tileset.tres" id="1_6fs6h"]
+[ext_resource type="Texture2D" uid="uid://b5qbfeogpshim" path="res://Assets/Art/blacksmith.png" id="1_54hhi"]
+[ext_resource type="Script" path="res://Scenes/UI/main_menu.gd" id="1_ps7tv"]
+[ext_resource type="Texture2D" uid="uid://dv1he1kfhd212" path="res://Assets/Art/forge.png" id="3_s7x3y"]
+[ext_resource type="PackedScene" uid="uid://d1u845x3ieyko" path="res://Scenes/UI/forge_flame.tscn" id="4_kf4rw"]
+[ext_resource type="FontFile" uid="uid://bowq5l47wqgxq" path="res://Assets/Fonts/Kenney Pixel.ttf" id="5_t55ig"]
+[ext_resource type="Texture2D" uid="uid://pkltqtiete7e" path="res://Assets/UI/panel_beige.png" id="7_v0spo"]
+[ext_resource type="Texture2D" uid="uid://dixgjk551lkgh" path="res://Assets/UI/buttonSquare_blue.png" id="7_vorbp"]
+[ext_resource type="Texture2D" uid="uid://qvwbtu04dtvg" path="res://Assets/UI/buttonSquare_blue_pressed.png" id="7_ypih3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s886u"]
+texture = ExtResource("7_vorbp")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qglaq"]
+texture = ExtResource("7_ypih3")
+
+[sub_resource type="LabelSettings" id="LabelSettings_s8ulw"]
+font = ExtResource("5_t55ig")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fpsnx"]
+texture = ExtResource("7_vorbp")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qu6x0"]
+texture = ExtResource("7_ypih3")
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_ps7tv")
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2(4, 4)
+tile_set = ExtResource("1_6fs6h")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 262144, 3, 1, 655360, 0, 2, 720896, 0, 3, 262144, 3, 4, 262144, 3, 5, 262144, 3, 6, 262144, 3, 7, 262144, 3, 65536, 131072, 4, 65537, 131072, 4, 65538, 131072, 4, 65539, 131072, 4, 65540, 131072, 4, 65541, 131072, 4, 65542, 131072, 4, 65543, 131072, 4, 131072, 0, 4, 131073, 0, 4, 131074, 0, 4, 131075, 0, 4, 131076, 0, 4, 131077, 0, 4, 131078, 0, 4, 131079, 0, 4, 196615, 0, 4, 196614, 0, 4, 196613, 0, 4, 196612, 0, 4, 196611, 0, 4, 196610, 0, 4, 196609, 0, 4, 196608, 0, 4, 262144, 0, 4, 262145, 0, 4, 262146, 0, 4, 262147, 0, 4, 262148, 0, 4, 262149, 0, 4, 262150, 0, 4, 262151, 0, 4)
+
+[node name="BlacksmithSprite" type="Sprite2D" parent="."]
+position = Vector2(85, 160)
+scale = Vector2(4, 4)
+texture = ExtResource("1_54hhi")
+
+[node name="AnvilSprite" type="Sprite2D" parent="."]
+position = Vector2(160, 185)
+scale = Vector2(4, 4)
+texture = ExtResource("3_s7x3y")
+
+[node name="ForgeFlame" parent="." instance=ExtResource("4_kf4rw")]
+position = Vector2(129, 38)
+scale = Vector2(4, 4)
+
+[node name="MenuLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="MenuLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuLayer/Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -178.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 150.0
+grow_horizontal = 0
+
+[node name="BuyButton" type="Button" parent="MenuLayer/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_t55ig")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_s886u")
+theme_override_styles/hover = SubResource("StyleBoxTexture_s886u")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qglaq")
+text = "Buy Materials"
+
+[node name="ForgeButton" type="Button" parent="MenuLayer/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_t55ig")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_s886u")
+theme_override_styles/hover = SubResource("StyleBoxTexture_s886u")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qglaq")
+text = "Forge Item
+"
+
+[node name="SellButton" type="Button" parent="MenuLayer/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_t55ig")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_s886u")
+theme_override_styles/hover = SubResource("StyleBoxTexture_s886u")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qglaq")
+text = "Sell Wares
+"
+
+[node name="QuitGameButton" type="Button" parent="MenuLayer/Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -130.0
+offset_top = -42.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_t55ig")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_s886u")
+theme_override_styles/hover = SubResource("StyleBoxTexture_s886u")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qglaq")
+text = "Quit Game"
+
+[node name="CreditsButton" type="Button" parent="MenuLayer/Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -42.0
+offset_right = 120.0
+offset_bottom = -10.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_t55ig")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_s886u")
+theme_override_styles/hover = SubResource("StyleBoxTexture_s886u")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qglaq")
+text = "Credits"
+
+[node name="Label" type="Label" parent="MenuLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "TAB: View Inventory"
+label_settings = SubResource("LabelSettings_s8ulw")
+
+[node name="CreditsLayer" type="CanvasLayer" parent="."]
+layer = 15
+visible = false
+
+[node name="CreditsWindow" type="Panel" parent="CreditsLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelBackground" type="TextureRect" parent="CreditsLayer/CreditsWindow"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_v0spo")
+expand_mode = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CreditsLayer/CreditsWindow/PanelBackground"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 15.0
+offset_right = -20.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("5_t55ig")
+theme_override_fonts/bold_font = ExtResource("5_t55ig")
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+theme_override_font_sizes/italics_font_size = 32
+theme_override_font_sizes/bold_italics_font_size = 32
+bbcode_enabled = true
+text = "[b][color=Red]Forge Master[/color]
+[color=Black]Coding and Design: [/color][color=Red]Lonnie
+Credits[/color][/b]
+[color=black]Art Assets and fonts:[/color][color=Red] Kenny
+[url]https://kenney.nl[/url][/color]
+[color=black]Music and SFX:[/color]
+[color=Red]RandomMind - The Old Tower Inn
+[url]https://opengameart.org/users/randommind[/url]
+themightyglider - Forger
+[url]https://opengameart.org/users/themightyglider[/url]
+Modestas - Cash Register
+[url]https://pixabay.com/users/modestas123123-7879278/[/url]
+Sad Trombone - Pixabay
+[url]https://pixabay.com/users/pixabay-1/[/url][/color]"
+
+[node name="BackButton" type="Button" parent="CreditsLayer/CreditsWindow/PanelBackground"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -8.0
+offset_right = -50.0
+offset_bottom = -15.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_t55ig")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_fpsnx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_fpsnx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qu6x0")
+text = "Back"
+
+[connection signal="pressed" from="MenuLayer/Control/VBoxContainer/BuyButton" to="." method="_on_buy_button_pressed"]
+[connection signal="pressed" from="MenuLayer/Control/VBoxContainer/ForgeButton" to="." method="_on_forge_button_pressed"]
+[connection signal="pressed" from="MenuLayer/Control/VBoxContainer/SellButton" to="." method="_on_sell_button_pressed"]
+[connection signal="pressed" from="MenuLayer/Control/QuitGameButton" to="." method="_on_quit_game_button_pressed"]
+[connection signal="pressed" from="MenuLayer/Control/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="CreditsLayer/CreditsWindow/PanelBackground/BackButton" to="." method="_on_back_button_pressed"]

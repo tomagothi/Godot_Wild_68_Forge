@@ -1,0 +1,128 @@
+[gd_scene load_steps=13 format=3 uid="uid://b36is0beesm3m"]
+
+[ext_resource type="Script" path="res://Scenes/main.gd" id="1_ysm44"]
+[ext_resource type="PackedScene" uid="uid://br2f37l62pem6" path="res://Scenes/Player/player.tscn" id="2_5vdxj"]
+[ext_resource type="AudioStream" uid="uid://c4s1qe8yj8hc4" path="res://Assets/Audio/CHIPTUNE_Loop_The_Old_Tower_Inn.wav" id="2_hbyy8"]
+[ext_resource type="PackedScene" uid="uid://bdr7wbmqat0rc" path="res://Scenes/UI/main_menu.tscn" id="3_a8ueo"]
+[ext_resource type="Script" path="res://Scenes/current_scene.gd" id="3_br7e4"]
+[ext_resource type="PackedScene" uid="uid://dcnu7ievmbuha" path="res://Scenes/Areas/merchant_shop.tscn" id="5_57q81"]
+[ext_resource type="PackedScene" uid="uid://b4drtljlyc4vm" path="res://Scenes/Areas/player_shop.tscn" id="6_01rhb"]
+[ext_resource type="PackedScene" uid="uid://caxa2yt6if8v5" path="res://Scenes/Areas/player_forge.tscn" id="7_63qv1"]
+
+[sub_resource type="Animation" id="Animation_7lys0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CurrentScene/AnimationPlayer/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_cwpxm"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CurrentScene/AnimationPlayer/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.1, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hdrwg"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CurrentScene/AnimationPlayer/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CurrentScene")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_on_fade_out_finished"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_djv6f"]
+_data = {
+"RESET": SubResource("Animation_7lys0"),
+"fade_in": SubResource("Animation_cwpxm"),
+"fade_out": SubResource("Animation_hdrwg")
+}
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_ysm44")
+main_theme = ExtResource("2_hbyy8")
+
+[node name="Player" parent="." instance=ExtResource("2_5vdxj")]
+
+[node name="CurrentScene" type="Node2D" parent="."]
+script = ExtResource("3_br7e4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CurrentScene"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_djv6f")
+}
+
+[node name="ColorRect" type="ColorRect" parent="CurrentScene/AnimationPlayer"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MainMenu" parent="CurrentScene" instance=ExtResource("3_a8ueo")]
+
+[node name="MerchantShop" parent="CurrentScene" instance=ExtResource("5_57q81")]
+visible = false
+
+[node name="MerchantInventory" parent="CurrentScene/MerchantShop" index="3"]
+visible = false
+
+[node name="PlayerShop" parent="CurrentScene" instance=ExtResource("6_01rhb")]
+visible = false
+
+[node name="ChatWindows" parent="CurrentScene/PlayerShop" index="4"]
+visible = false
+
+[node name="ContinueButton" parent="CurrentScene/PlayerShop/ChatWindows" index="3"]
+anchors_preset = 3
+
+[node name="PlayerForge" parent="CurrentScene" instance=ExtResource("7_63qv1")]
+visible = false
+
+[node name="CraftingLayer" parent="CurrentScene/PlayerForge" index="3"]
+visible = false
+
+[editable path="CurrentScene/MainMenu"]
+[editable path="CurrentScene/MerchantShop"]
+[editable path="CurrentScene/PlayerShop"]
+[editable path="CurrentScene/PlayerForge"]

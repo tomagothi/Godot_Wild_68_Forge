@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogOptions" load_steps=2 format=3 uid="uid://kltmdigg0s72"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/dialog_options.gd" id="1_13ble"]
+
+[resource]
+script = ExtResource("1_13ble")
+initial_offer_dialog = Array[String](["Show me your finest %s! Will you accept %s gold?", "What's the price for this %s? Is %s gold enough?", "I hear you can make a quality %s. Will you take %s gold for this one?", "I must have this %s. I will offer you %s gold.", "This %s normally sells for %s gold, correct?"])
+offer_accepted_dialog = Array[String](["I would have paid double this price for your work friend. Thank you!", "What a bargain. Thank you!", "I really shouldn't spend so much gold, but your work is so wonderful!", "I must have it at any price! I accept!", "Money is no object friend. Thank you!"])
+offer_rejected_dialog = Array[String](["This is embarassing. You shouldn't be seeing this dialog."])

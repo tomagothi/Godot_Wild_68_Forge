@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccle1kdjiiulj"]
+
+[ext_resource type="Texture2D" uid="uid://64672lk581tl" path="res://Assets/UI/panel_blue.png" id="1_jr4dh"]
+[ext_resource type="Script" path="res://Scenes/UI/notification.gd" id="2_3hiw5"]
+[ext_resource type="FontFile" uid="uid://bowq5l47wqgxq" path="res://Assets/Fonts/Kenney Pixel.ttf" id="2_adxdg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_000p5"]
+font = ExtResource("2_adxdg")
+font_color = Color(0, 0, 0, 1)
+
+[node name="Notification" type="TextureRect"]
+custom_minimum_size = Vector2(180, 25)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_jr4dh")
+expand_mode = 1
+script = ExtResource("2_3hiw5")
+
+[node name="NotificationText" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 5.0
+offset_right = -10.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Bought Iron Ingot"
+label_settings = SubResource("LabelSettings_000p5")
+vertical_alignment = 1

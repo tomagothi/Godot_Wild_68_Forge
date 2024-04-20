@@ -1,0 +1,151 @@
+[gd_scene load_steps=8 format=3 uid="uid://by4uxnism7bpn"]
+
+[ext_resource type="Script" path="res://Scenes/Player/inventory.gd" id="1_jgb5d"]
+[ext_resource type="Resource" uid="uid://q6ju1hulfnkv" path="res://Resources/Items/CraftingMaterials/iron_ingot.tres" id="2_gho8c"]
+[ext_resource type="Resource" uid="uid://biw430ngyy8nq" path="res://Resources/Items/CraftingMaterials/wood.tres" id="3_dhkkm"]
+[ext_resource type="PackedScene" uid="uid://b6csv6dn1wuoy" path="res://Scenes/UI/inventory_item.tscn" id="3_qjp57"]
+[ext_resource type="FontFile" uid="uid://bowq5l47wqgxq" path="res://Assets/Fonts/Kenney Pixel.ttf" id="4_msg0u"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_n26wo"]
+font = ExtResource("4_msg0u")
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_narl3"]
+font = ExtResource("4_msg0u")
+font_size = 32
+
+[node name="MerchantInventory" type="CanvasLayer"]
+script = ExtResource("1_jgb5d")
+starting_items = Array[Resource("res://Resources/Scripts/item.gd")]([ExtResource("2_gho8c"), ExtResource("3_dhkkm")])
+
+[node name="InventoryWindow" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InventoryItemsContainer" type="GridContainer" parent="InventoryWindow"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -170.0
+offset_top = -30.0
+offset_right = 170.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 5
+
+[node name="InventoryItem" parent="InventoryWindow/InventoryItemsContainer" instance=ExtResource("3_qjp57")]
+layout_mode = 2
+
+[node name="InventoryItem2" parent="InventoryWindow/InventoryItemsContainer" instance=ExtResource("3_qjp57")]
+layout_mode = 2
+
+[node name="InventoryItem3" parent="InventoryWindow/InventoryItemsContainer" instance=ExtResource("3_qjp57")]
+layout_mode = 2
+
+[node name="InventoryItem4" parent="InventoryWindow/InventoryItemsContainer" instance=ExtResource("3_qjp57")]
+layout_mode = 2
+
+[node name="InventoryItem5" parent="InventoryWindow/InventoryItemsContainer" instance=ExtResource("3_qjp57")]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="InventoryWindow/InventoryItemsContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="PriceText" type="Label" parent="InventoryWindow/InventoryItemsContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_n26wo")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="InventoryWindow/InventoryItemsContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="PriceText" type="Label" parent="InventoryWindow/InventoryItemsContainer/ColorRect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_n26wo")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect3" type="ColorRect" parent="InventoryWindow/InventoryItemsContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="PriceText" type="Label" parent="InventoryWindow/InventoryItemsContainer/ColorRect3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_n26wo")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect4" type="ColorRect" parent="InventoryWindow/InventoryItemsContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="PriceText" type="Label" parent="InventoryWindow/InventoryItemsContainer/ColorRect4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_n26wo")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect5" type="ColorRect" parent="InventoryWindow/InventoryItemsContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="PriceText" type="Label" parent="InventoryWindow/InventoryItemsContainer/ColorRect5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_n26wo")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ItemInfoText" type="Label" parent="InventoryWindow"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+label_settings = SubResource("LabelSettings_narl3")
+horizontal_alignment = 1
+vertical_alignment = 1

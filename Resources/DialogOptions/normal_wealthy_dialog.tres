@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogOptions" load_steps=2 format=3 uid="uid://iihgwpxnkgue"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/dialog_options.gd" id="1_qytiq"]
+
+[resource]
+script = ExtResource("1_qytiq")
+initial_offer_dialog = Array[String](["Perhaps you would be willing to sell me a %s for %s gold?", "I seek a %s. Will you accept %s gold?", "I am looking to purchase a %s. Will you take %s gold?", "How much for this %s? Say, %s gold?", "I have a need for a %s. Would you sell one for %s gold?"])
+offer_accepted_dialog = Array[String](["Indeed, I shall accept your offer.", "Thank you friend. Your work is outstanding.", "Your price is within my budget, so I accept!", "You have my gratitude friend!", "Here is you gold friend. Thank you!"])
+offer_rejected_dialog = Array[String](["Sorry, that's just past my budget.", "I wouldn't hear the end of it if I paid that price. Sorry friend.", "I was willing to pay full price, but this is too much.", "I'm sure your work is worth the price you ask, but it's too high for me.", "Sorry friend. I didn't gain my wealth by over spending."])

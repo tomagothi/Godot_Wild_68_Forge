@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://4f64m17p52gb"]
+
+[ext_resource type="Texture2D" uid="uid://dmrv7133v58sa" path="res://Assets/Art/great_sword.png" id="1_i8sv4"]
+[ext_resource type="Script" path="res://Resources/Scripts/item.gd" id="1_tcel0"]
+
+[resource]
+script = ExtResource("1_tcel0")
+display_name = "Great Sword"
+item_icon = ExtResource("1_i8sv4")
+base_cost = 50
+max_stack_size = 1
+item_type = 2

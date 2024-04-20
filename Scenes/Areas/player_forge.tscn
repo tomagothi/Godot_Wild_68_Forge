@@ -1,0 +1,63 @@
+[gd_scene load_steps=10 format=3 uid="uid://caxa2yt6if8v5"]
+
+[ext_resource type="Script" path="res://Scenes/Areas/player_forge.gd" id="1_34t6e"]
+[ext_resource type="TileSet" uid="uid://c2h3tko2c2wyi" path="res://Scenes/Areas/tiny_dungeon_tileset.tres" id="2_hmrnf"]
+[ext_resource type="Texture2D" uid="uid://b5qbfeogpshim" path="res://Assets/Art/blacksmith.png" id="3_ljmp2"]
+[ext_resource type="FontFile" uid="uid://bowq5l47wqgxq" path="res://Assets/Fonts/Kenney Pixel.ttf" id="5_efg7k"]
+[ext_resource type="PackedScene" uid="uid://d1u845x3ieyko" path="res://Scenes/UI/forge_flame.tscn" id="5_stffx"]
+[ext_resource type="Texture2D" uid="uid://dixgjk551lkgh" path="res://Assets/UI/buttonSquare_blue.png" id="6_bq5fg"]
+[ext_resource type="Texture2D" uid="uid://qvwbtu04dtvg" path="res://Assets/UI/buttonSquare_blue_pressed.png" id="7_wcsq2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_50dij"]
+texture = ExtResource("6_bq5fg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5n55x"]
+texture = ExtResource("7_wcsq2")
+
+[node name="PlayerForge" type="Node2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_34t6e")
+
+[node name="Tilemap" type="TileMap" parent="."]
+scale = Vector2(4, 4)
+tile_set = ExtResource("2_hmrnf")
+format = 2
+layer_0/name = "Main"
+layer_0/tile_data = PackedInt32Array(0, 65536, 0, 1, 131072, 0, 2, 131072, 0, 3, 131072, 0, 4, 131072, 0, 5, 131072, 0, 6, 131072, 0, 7, 131072, 0, 8, 131072, 0, 9, 131072, 0, 10, 131072, 0, 11, 131072, 0, 12, 131072, 0, 13, 131072, 0, 14, 131072, 0, 15, 196608, 0, 65536, 65536, 1, 131072, 65536, 1, 196608, 65536, 1, 262144, 65536, 1, 327680, 65536, 1, 393216, 65536, 1, 458752, 65536, 1, 524288, 65536, 2, 65537, 262144, 3, 65538, 655360, 0, 65539, 720896, 0, 65540, 262144, 3, 65541, 262144, 3, 65542, 262144, 3, 65543, 262144, 3, 65544, 262144, 3, 65545, 262144, 3, 65546, 262144, 3, 65547, 262144, 3, 65548, 262144, 3, 65549, 589824, 3, 65550, 262144, 3, 65551, 196608, 1, 196609, 0, 4, 196610, 0, 4, 196611, 0, 4, 196612, 0, 4, 196613, 0, 4, 196614, 0, 4, 196615, 0, 4, 196616, 0, 4, 196617, 0, 4, 196618, 0, 4, 196619, 0, 4, 196620, 0, 4, 196621, 0, 4, 196622, 0, 4, 196623, 196608, 1, 524299, 131072, 2, 458763, 0, 4, 393227, 0, 4, 327691, 0, 4, 262155, 0, 4, 262154, 0, 4, 262153, 0, 4, 262152, 0, 4, 262151, 0, 4, 262150, 0, 4, 262149, 0, 4, 262148, 0, 4, 262147, 0, 4, 262146, 0, 4, 262145, 0, 4, 327681, 0, 4, 393217, 0, 4, 458753, 0, 4, 524289, 131072, 2, 524290, 131072, 2, 458754, 0, 4, 393218, 0, 4, 327682, 0, 4, 327683, 0, 4, 393219, 0, 4, 458755, 0, 4, 524291, 131072, 2, 524292, 131072, 2, 458756, 0, 4, 393220, 0, 4, 327684, 0, 4, 327685, 0, 4, 393221, 0, 4, 458757, 0, 4, 524293, 131072, 2, 524294, 131072, 2, 458758, 0, 4, 393222, 0, 4, 327686, 0, 4, 327687, 0, 4, 393223, 0, 4, 458759, 0, 4, 524295, 131072, 2, 524296, 131072, 2, 458760, 0, 4, 393224, 0, 4, 327688, 0, 4, 327689, 0, 4, 393225, 0, 4, 458761, 0, 4, 524297, 131072, 2, 524298, 131072, 2, 458762, 0, 4, 393226, 0, 4, 327690, 0, 4, 524300, 131072, 2, 458764, 0, 4, 393228, 0, 4, 327692, 0, 4, 262156, 0, 4, 262157, 0, 4, 327693, 0, 4, 393229, 0, 4, 458765, 0, 4, 524301, 131072, 2, 524302, 131072, 2, 458766, 0, 4, 393230, 0, 4, 327694, 0, 4, 262158, 0, 4, 262159, 196608, 1, 327695, 196608, 1, 393231, 196608, 1, 458767, 196608, 1, 524303, 196608, 2, 131087, 196608, 1, 131073, 131072, 4, 131074, 131072, 4, 131075, 131072, 4, 131076, 131072, 4, 131077, 131072, 4, 131078, 131072, 4, 131079, 131072, 4, 131080, 131072, 4, 131081, 131072, 4, 131082, 131072, 4, 131083, 131072, 4, 131084, 131072, 4, 131085, 131072, 4, 131086, 131072, 4)
+layer_1/name = "Second"
+layer_1/tile_data = PackedInt32Array(196610, 131072, 6, 327682, 655360, 6, 196617, 0, 6)
+
+[node name="PlayerSprite" type="Sprite2D" parent="."]
+position = Vector2(224, 202)
+scale = Vector2(4, 4)
+texture = ExtResource("3_ljmp2")
+flip_h = true
+
+[node name="ForgeFlame" parent="." instance=ExtResource("5_stffx")]
+position = Vector2(192, 102)
+scale = Vector2(4, 4)
+frame = 3
+frame_progress = 0.746775
+
+[node name="CraftingLayer" type="CanvasLayer" parent="."]
+
+[node name="EndCrafting" type="Button" parent="CraftingLayer"]
+custom_minimum_size = Vector2(160, 30)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -18.0
+offset_right = 18.0
+offset_bottom = -10.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_efg7k")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_50dij")
+theme_override_styles/hover = SubResource("StyleBoxTexture_50dij")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_5n55x")
+text = "End Crafting"
+
+[connection signal="pressed" from="CraftingLayer/EndCrafting" to="." method="_on_end_crafting_pressed"]

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemRecipe" load_steps=4 format=3 uid="uid://b7rq4dwceysrw"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/item_recipe.gd" id="1_raf3y"]
+[ext_resource type="Resource" uid="uid://bicel0hyq57jo" path="res://Resources/Recipes/battle_axe_recipe.tres" id="1_x7now"]
+[ext_resource type="Texture2D" uid="uid://c3ed3g1xp53jf" path="res://Assets/Art/battle_axe_recipe.png" id="1_y0btf"]
+
+[resource]
+script = ExtResource("1_raf3y")
+recipe = ExtResource("1_x7now")
+display_name = "Battle Axe Plans"
+item_icon = ExtResource("1_y0btf")
+base_cost = 75
+max_stack_size = 1
+item_type = 3

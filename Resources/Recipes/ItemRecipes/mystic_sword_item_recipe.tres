@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemRecipe" load_steps=4 format=3 uid="uid://jitfuks7msjf"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/item_recipe.gd" id="1_8wakd"]
+[ext_resource type="Texture2D" uid="uid://bigjy501u1hvi" path="res://Assets/Art/mystic_sword_recipe.png" id="1_kuwjr"]
+[ext_resource type="Resource" uid="uid://cvj10bc5tywkh" path="res://Resources/Recipes/mysic_sword_recipe.tres" id="2_au8vy"]
+
+[resource]
+script = ExtResource("1_8wakd")
+recipe = ExtResource("2_au8vy")
+display_name = "Mystic Sword Plans"
+item_icon = ExtResource("1_kuwjr")
+base_cost = 200
+max_stack_size = 1
+item_type = 3

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogOptions" load_steps=2 format=3 uid="uid://58jy0gx3bvbo"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/dialog_options.gd" id="1_m5tqq"]
+
+[resource]
+script = ExtResource("1_m5tqq")
+initial_offer_dialog = Array[String](["I am looking for a quality %s. Will you accept %s gold?", "A fine %s you have. I will offer %s gold for it.", "Would you part with this %s for %s gold?", "I seek a %s. Will you accept %s gold?", "Greetings blacksmith. I am in need of a %s and I can pay %s gold."])
+offer_accepted_dialog = Array[String](["Huzzah, a wonderous purchase!", "Thank you good blacksmith!", "For such quality, it is worth the price you ask.", "You have made yourself a sale blacksmith!", "Such marvelous craftmanship. I'll take it!"])
+offer_rejected_dialog = Array[String](["That price is just too high.", "Sorry friend. I did not bring enough gold.", "My apologies, but I cannot spend that much gold.", "I was hoping you would make me a better deal.", "I think I need to sleep on this. Perhaps tomorrow."])

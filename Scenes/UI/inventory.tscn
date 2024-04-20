@@ -1,0 +1,110 @@
+[gd_scene load_steps=7 format=3 uid="uid://br7270jixcgi5"]
+
+[ext_resource type="Script" path="res://Scenes/Player/inventory.gd" id="1_p5q2s"]
+[ext_resource type="Resource" uid="uid://q6ju1hulfnkv" path="res://Resources/Items/CraftingMaterials/iron_ingot.tres" id="2_84wb3"]
+[ext_resource type="Texture2D" uid="uid://pkltqtiete7e" path="res://Assets/UI/panel_beige.png" id="3_5234m"]
+[ext_resource type="PackedScene" uid="uid://b6csv6dn1wuoy" path="res://Scenes/UI/inventory_item.tscn" id="3_vrshp"]
+[ext_resource type="FontFile" uid="uid://bowq5l47wqgxq" path="res://Assets/Fonts/Kenney Pixel.ttf" id="4_sv6i2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_narl3"]
+font = ExtResource("4_sv6i2")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[node name="Inventory" type="CanvasLayer"]
+script = ExtResource("1_p5q2s")
+starting_items = Array[Resource("res://Resources/Scripts/item.gd")]([ExtResource("2_84wb3"), ExtResource("2_84wb3"), ExtResource("2_84wb3")])
+
+[node name="InventoryWindow" type="Panel" parent="."]
+top_level = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InventoryBackground" type="TextureRect" parent="InventoryWindow"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_5234m")
+expand_mode = 1
+
+[node name="InventoryItemsContainer" type="GridContainer" parent="InventoryWindow"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -170.0
+offset_top = -100.0
+offset_right = 170.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 5
+
+[node name="InventoryItem" parent="InventoryWindow/InventoryItemsContainer" instance=ExtResource("3_vrshp")]
+layout_mode = 2
+
+[node name="InventoryItem2" parent="InventoryWindow/InventoryItemsContainer" instance=ExtResource("3_vrshp")]
+layout_mode = 2
+
+[node name="InventoryItem3" parent="InventoryWindow/InventoryItemsContainer" instance=ExtResource("3_vrshp")]
+layout_mode = 2
+
+[node name="InventoryItem4" parent="InventoryWindow/InventoryItemsContainer" instance=ExtResource("3_vrshp")]
+layout_mode = 2
+
+[node name="InventoryItem5" parent="InventoryWindow/InventoryItemsContainer" instance=ExtResource("3_vrshp")]
+layout_mode = 2
+
+[node name="InventoryItem6" parent="InventoryWindow/InventoryItemsContainer" instance=ExtResource("3_vrshp")]
+layout_mode = 2
+
+[node name="InventoryItem7" parent="InventoryWindow/InventoryItemsContainer" instance=ExtResource("3_vrshp")]
+layout_mode = 2
+
+[node name="InventoryItem8" parent="InventoryWindow/InventoryItemsContainer" instance=ExtResource("3_vrshp")]
+layout_mode = 2
+
+[node name="InventoryItem9" parent="InventoryWindow/InventoryItemsContainer" instance=ExtResource("3_vrshp")]
+layout_mode = 2
+
+[node name="InventoryItem10" parent="InventoryWindow/InventoryItemsContainer" instance=ExtResource("3_vrshp")]
+layout_mode = 2
+
+[node name="InventoryItem11" parent="InventoryWindow/InventoryItemsContainer" instance=ExtResource("3_vrshp")]
+layout_mode = 2
+
+[node name="InventoryItem12" parent="InventoryWindow/InventoryItemsContainer" instance=ExtResource("3_vrshp")]
+layout_mode = 2
+
+[node name="InventoryItem13" parent="InventoryWindow/InventoryItemsContainer" instance=ExtResource("3_vrshp")]
+layout_mode = 2
+
+[node name="InventoryItem14" parent="InventoryWindow/InventoryItemsContainer" instance=ExtResource("3_vrshp")]
+layout_mode = 2
+
+[node name="InventoryItem15" parent="InventoryWindow/InventoryItemsContainer" instance=ExtResource("3_vrshp")]
+layout_mode = 2
+
+[node name="ItemInfoText" type="Label" parent="InventoryWindow"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+label_settings = SubResource("LabelSettings_narl3")
+horizontal_alignment = 1
+vertical_alignment = 1

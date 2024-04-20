@@ -1,0 +1,87 @@
+[gd_scene load_steps=13 format=3 uid="uid://br2f37l62pem6"]
+
+[ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_cckql"]
+[ext_resource type="AudioStream" uid="uid://tgsax35e0fi5" path="res://Assets/Audio/cash-register-kaching-sound-effect-125042.mp3" id="2_wq57f"]
+[ext_resource type="Resource" uid="uid://bo3pcc681av8x" path="res://Resources/Recipes/short_sword_recipe.tres" id="2_yuh6j"]
+[ext_resource type="Resource" uid="uid://dbcttuy5pyi03" path="res://Resources/Recipes/shield_recipe.tres" id="3_f8c7d"]
+[ext_resource type="Resource" uid="uid://7jhmm4npu8sn" path="res://Resources/Items/CraftingTools/blacksmith_hammer.tres" id="3_k27i2"]
+[ext_resource type="PackedScene" uid="uid://br7270jixcgi5" path="res://Scenes/UI/inventory.tscn" id="4_2mhdo"]
+[ext_resource type="Resource" uid="uid://q6ju1hulfnkv" path="res://Resources/Items/CraftingMaterials/iron_ingot.tres" id="4_a7ay3"]
+[ext_resource type="FontFile" uid="uid://bowq5l47wqgxq" path="res://Assets/Fonts/Kenney Pixel.ttf" id="5_b7fu0"]
+[ext_resource type="Script" path="res://Scenes/Player/crafting.gd" id="6_4xmqq"]
+[ext_resource type="PackedScene" uid="uid://bw2upaavver5j" path="res://Scenes/UI/crafting_recipe_ui.tscn" id="7_syn5n"]
+[ext_resource type="AudioStream" uid="uid://didvmbaqaoa3s" path="res://Assets/Audio/forger.ogg" id="10_kfni8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kakrp"]
+font = ExtResource("5_b7fu0")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[node name="Player" type="Node" groups=["Player"]]
+script = ExtResource("1_cckql")
+gold = 100
+kaching_audio = ExtResource("2_wq57f")
+
+[node name="Inventory" parent="." instance=ExtResource("4_2mhdo")]
+layer = 10
+visible = false
+starting_items = Array[Resource("res://Resources/Scripts/item.gd")]([ExtResource("3_k27i2"), ExtResource("4_a7ay3"), ExtResource("4_a7ay3")])
+
+[node name="UI" type="CanvasLayer" parent="."]
+layer = 10
+visible = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 25.0
+offset_top = 10.0
+offset_right = -25.0
+offset_bottom = 28.0
+grow_horizontal = 2
+
+[node name="GoldText" type="Label" parent="UI/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Gold: 50"
+label_settings = SubResource("LabelSettings_kakrp")
+
+[node name="ReputationText" type="Label" parent="UI/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Reputation: Novice"
+label_settings = SubResource("LabelSettings_kakrp")
+horizontal_alignment = 2
+
+[node name="Crafting" type="CanvasLayer" parent="."]
+script = ExtResource("6_4xmqq")
+known_recipes = Array[Resource("res://Resources/Scripts/crafting_recipe.gd")]([ExtResource("2_yuh6j"), ExtResource("3_f8c7d")])
+crafting_recipe_ui_scene = ExtResource("7_syn5n")
+anvil_sound = ExtResource("10_kfni8")
+
+[node name="CraftingWindow" type="Panel" parent="Crafting"]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -276.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Crafting/CraftingWindow"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RecipeContainer" type="VBoxContainer" parent="Crafting/CraftingWindow/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[editable path="Inventory"]

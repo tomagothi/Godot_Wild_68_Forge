@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://5bk73qh68eyj"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/item.gd" id="1_3iwpr"]
+[ext_resource type="Texture2D" uid="uid://dwoib1w4lhq5v" path="res://Assets/Art/pickaxe.png" id="1_tp6em"]
+
+[resource]
+script = ExtResource("1_3iwpr")
+display_name = "Pick Axe"
+item_icon = ExtResource("1_tp6em")
+base_cost = 15
+max_stack_size = 1
+item_type = 2

@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://d1u845x3ieyko"]
+
+[ext_resource type="Texture2D" uid="uid://ctxb85skkwvx6" path="res://Assets/Art/flames_sprite_sheet.png" id="1_tstea"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uvay0"]
+atlas = ExtResource("1_tstea")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4mgvn"]
+atlas = ExtResource("1_tstea")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kbivm"]
+atlas = ExtResource("1_tstea")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hyd0e"]
+atlas = ExtResource("1_tstea")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ul8m1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uvay0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4mgvn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kbivm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hyd0e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="ForgeFlame" type="AnimatedSprite2D"]
+position = Vector2(48, 25.5)
+sprite_frames = SubResource("SpriteFrames_ul8m1")
+autoplay = "default"

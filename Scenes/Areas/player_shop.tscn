@@ -1,0 +1,310 @@
+[gd_scene load_steps=21 format=3 uid="uid://b4drtljlyc4vm"]
+
+[ext_resource type="Script" path="res://Scenes/Areas/player_shop.gd" id="1_nti8q"]
+[ext_resource type="TileSet" uid="uid://c2h3tko2c2wyi" path="res://Scenes/Areas/tiny_dungeon_tileset.tres" id="1_vki1w"]
+[ext_resource type="Texture2D" uid="uid://b5qbfeogpshim" path="res://Assets/Art/blacksmith.png" id="2_442fs"]
+[ext_resource type="AudioStream" uid="uid://tgsax35e0fi5" path="res://Assets/Audio/cash-register-kaching-sound-effect-125042.mp3" id="2_gp68d"]
+[ext_resource type="PackedScene" uid="uid://cs4p1htx4e8hn" path="res://Scenes/Customer/customer.tscn" id="3_bpa7e"]
+[ext_resource type="AudioStream" uid="uid://bdyafxeu2nfpa" path="res://Assets/Audio/wah-wah-sad-trombone-6347.mp3" id="3_nivi7"]
+[ext_resource type="PackedScene" uid="uid://d1u845x3ieyko" path="res://Scenes/UI/forge_flame.tscn" id="4_4qx0v"]
+[ext_resource type="Texture2D" uid="uid://pkltqtiete7e" path="res://Assets/UI/panel_beige.png" id="4_avykb"]
+[ext_resource type="Texture2D" uid="uid://d1vd40mt1v3nx" path="res://Assets/UI/panel_beigeLight.png" id="5_xuprh"]
+[ext_resource type="FontFile" uid="uid://bowq5l47wqgxq" path="res://Assets/Fonts/Kenney Pixel.ttf" id="7_0ifgb"]
+[ext_resource type="Texture2D" uid="uid://64672lk581tl" path="res://Assets/UI/panel_blue.png" id="11_l5eib"]
+[ext_resource type="Texture2D" uid="uid://dixgjk551lkgh" path="res://Assets/UI/buttonSquare_blue.png" id="12_1n1kp"]
+[ext_resource type="Texture2D" uid="uid://qvwbtu04dtvg" path="res://Assets/UI/buttonSquare_blue_pressed.png" id="13_qg3ej"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vh44f"]
+font = ExtResource("7_0ifgb")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4l4cq"]
+font = ExtResource("7_0ifgb")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wpqc2"]
+font = ExtResource("7_0ifgb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_50dij"]
+texture = ExtResource("12_1n1kp")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ne8h1"]
+texture = ExtResource("13_qg3ej")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_avy58"]
+texture = ExtResource("12_1n1kp")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_66ogy"]
+texture = ExtResource("13_qg3ej")
+
+[node name="PlayerShop" type="Node2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_nti8q")
+kaching_audio = ExtResource("2_gp68d")
+sad_trombone = ExtResource("3_nivi7")
+
+[node name="Tilemap" type="TileMap" parent="."]
+scale = Vector2(4, 4)
+tile_set = ExtResource("1_vki1w")
+format = 2
+layer_0/name = "Main"
+layer_0/tile_data = PackedInt32Array(0, 65536, 0, 1, 131072, 0, 2, 131072, 0, 3, 131072, 0, 4, 131072, 0, 5, 131072, 0, 6, 131072, 0, 7, 131072, 0, 8, 131072, 0, 9, 131072, 0, 10, 131072, 0, 11, 131072, 0, 12, 131072, 0, 13, 131072, 0, 14, 131072, 0, 15, 196608, 0, 65536, 65536, 1, 131072, 65536, 1, 196608, 65536, 1, 262144, 65536, 1, 327680, 65536, 1, 393216, 65536, 1, 458752, 65536, 1, 524288, 65536, 2, 65537, 262144, 3, 65538, 655360, 0, 65539, 720896, 0, 65540, 262144, 3, 65541, 262144, 3, 65542, 262144, 3, 65543, 262144, 3, 65544, 262144, 3, 65545, 262144, 3, 65546, 262144, 3, 65547, 262144, 3, 65548, 262144, 3, 65549, 589824, 3, 65550, 262144, 3, 65551, 196608, 1, 196609, 0, 4, 196610, 0, 4, 196611, 0, 4, 196612, 0, 4, 196613, 0, 4, 196614, 0, 4, 196615, 0, 4, 196616, 0, 4, 196617, 0, 4, 196618, 0, 4, 196619, 0, 4, 196620, 0, 4, 196621, 0, 4, 196622, 0, 4, 196623, 196608, 1, 524299, 131072, 2, 458763, 0, 4, 393227, 0, 4, 327691, 0, 4, 262155, 0, 4, 262154, 0, 4, 262153, 0, 4, 262152, 0, 4, 262151, 0, 4, 262150, 0, 4, 262149, 0, 4, 262148, 0, 4, 262147, 0, 4, 262146, 0, 4, 262145, 0, 4, 327681, 0, 4, 393217, 0, 4, 458753, 0, 4, 524289, 131072, 2, 524290, 131072, 2, 458754, 0, 4, 393218, 0, 4, 327682, 0, 4, 327683, 0, 4, 393219, 0, 4, 458755, 0, 4, 524291, 131072, 2, 524292, 131072, 2, 458756, 0, 4, 393220, 0, 4, 327684, 0, 4, 327685, 0, 4, 393221, 0, 4, 458757, 0, 4, 524293, 131072, 2, 524294, 131072, 2, 458758, 0, 4, 393222, 0, 4, 327686, 0, 4, 327687, 0, 4, 393223, 0, 4, 458759, 0, 4, 524295, 131072, 2, 524296, 131072, 2, 458760, 0, 4, 393224, 0, 4, 327688, 0, 4, 327689, 0, 4, 393225, 0, 4, 458761, 0, 4, 524297, 131072, 2, 524298, 131072, 2, 458762, 0, 4, 393226, 0, 4, 327690, 0, 4, 524300, 131072, 2, 458764, 0, 4, 393228, 0, 4, 327692, 0, 4, 262156, 0, 4, 262157, 0, 4, 327693, 0, 4, 393229, 0, 4, 458765, 0, 4, 524301, 131072, 2, 524302, 131072, 2, 458766, 0, 4, 393230, 0, 4, 327694, 0, 4, 262158, 0, 4, 262159, 196608, 1, 327695, 196608, 1, 393231, 196608, 1, 458767, 196608, 1, 524303, 196608, 2, 131087, 196608, 1, 131073, 131072, 4, 131074, 131072, 4, 131075, 131072, 4, 131076, 131072, 4, 131077, 131072, 4, 131078, 131072, 4, 131079, 131072, 4, 131080, 131072, 4, 131081, 131072, 4, 131082, 131072, 4, 131083, 131072, 4, 131084, 131072, 4, 131085, 131072, 4, 131086, 131072, 4)
+layer_1/name = "Second"
+layer_1/tile_data = PackedInt32Array(196610, 131072, 6, 327682, 655360, 6, 196617, 0, 6)
+
+[node name="Customer" parent="." instance=ExtResource("3_bpa7e")]
+position = Vector2(862, 162)
+
+[node name="PlayerSprite" type="Sprite2D" parent="."]
+position = Vector2(256, 320)
+scale = Vector2(4, 4)
+texture = ExtResource("2_442fs")
+
+[node name="ForgeFlame" parent="." instance=ExtResource("4_4qx0v")]
+position = Vector2(192, 102)
+scale = Vector2(4, 4)
+frame = 3
+frame_progress = 0.746775
+
+[node name="ChatWindows" type="CanvasLayer" parent="."]
+
+[node name="PlayerChat" type="TextureRect" parent="ChatWindows"]
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 255.0
+offset_bottom = 135.0
+texture = ExtResource("4_avykb")
+expand_mode = 1
+
+[node name="ChatArea" type="TextureRect" parent="ChatWindows/PlayerChat"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.0
+offset_top = -50.0
+offset_right = 110.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_xuprh")
+expand_mode = 1
+
+[node name="ChatText" type="Label" parent="ChatWindows/PlayerChat/ChatArea"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -40.0
+offset_right = 100.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Good morrow and well met my friend. What brings you to my establishment on this day?"
+label_settings = SubResource("LabelSettings_vh44f")
+autowrap_mode = 3
+
+[node name="CustomerChat" type="TextureRect" parent="ChatWindows"]
+offset_left = 257.0
+offset_top = 15.0
+offset_right = 497.0
+offset_bottom = 135.0
+texture = ExtResource("4_avykb")
+expand_mode = 1
+
+[node name="ChatArea" type="TextureRect" parent="ChatWindows/CustomerChat"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.0
+offset_top = -50.0
+offset_right = 110.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_xuprh")
+expand_mode = 1
+
+[node name="ChatText" type="Label" parent="ChatWindows/CustomerChat/ChatArea"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -40.0
+offset_right = 100.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "I am here to purchase a pick axe of reasonable quality. Do you have such wares?"
+label_settings = SubResource("LabelSettings_4l4cq")
+autowrap_mode = 3
+
+[node name="InteractionContainer" type="VBoxContainer" parent="ChatWindows"]
+custom_minimum_size = Vector2(350, 60)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 35.0
+offset_top = -99.0
+offset_right = 385.0
+offset_bottom = -35.0
+grow_vertical = 0
+theme_override_constants/separation = 2
+
+[node name="Offer1" type="Button" parent="ChatWindows/InteractionContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ChatWindows/InteractionContainer/Offer1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Offer 1"
+label_settings = SubResource("LabelSettings_wpqc2")
+vertical_alignment = 1
+
+[node name="Offer2" type="Button" parent="ChatWindows/InteractionContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+
+[node name="Label" type="Label" parent="ChatWindows/InteractionContainer/Offer2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Offer 1"
+label_settings = SubResource("LabelSettings_wpqc2")
+vertical_alignment = 1
+
+[node name="Offer3" type="Button" parent="ChatWindows/InteractionContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+
+[node name="Label" type="Label" parent="ChatWindows/InteractionContainer/Offer3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Offer 1"
+label_settings = SubResource("LabelSettings_wpqc2")
+vertical_alignment = 1
+
+[node name="ContinueButton" type="Button" parent="ChatWindows"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(105, 0)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -105.0
+offset_top = -32.0
+offset_right = -35.0
+offset_bottom = -35.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_0ifgb")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_50dij")
+theme_override_styles/hover = SubResource("StyleBoxTexture_50dij")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ne8h1")
+text = "Continue"
+
+[node name="LevelUpWindow" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+layer = 10
+visible = false
+
+[node name="Panel" type="Panel" parent="LevelUpWindow"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="LevelUpWindow/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_l5eib")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LevelUpWindow/Panel/TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 15.0
+offset_right = -20.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ReputationLevelText" type="RichTextLabel" parent="LevelUpWindow/Panel/TextureRect/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("7_0ifgb")
+theme_override_fonts/bold_font = ExtResource("7_0ifgb")
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 48
+bbcode_enabled = true
+text = "[color=Black] [p align=center][b]Congratulations[/b][/p][p] [/p][p align=center]You have attanded the reputation of[/p][p align=center]%s[/p][p] [/p][p align=center]New items are available for puchase.[/p][/color]"
+
+[node name="CongratsButton" type="Button" parent="LevelUpWindow/Panel/TextureRect/VBoxContainer"]
+custom_minimum_size = Vector2(120, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_0ifgb")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_avy58")
+theme_override_styles/hover = SubResource("StyleBoxTexture_avy58")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_66ogy")
+text = "Continue"
+
+[connection signal="pressed" from="ChatWindows/InteractionContainer/Offer1" to="." method="_on_offer_1_pressed"]
+[connection signal="pressed" from="ChatWindows/InteractionContainer/Offer2" to="." method="_on_offer_2_pressed"]
+[connection signal="pressed" from="ChatWindows/InteractionContainer/Offer3" to="." method="_on_offer_3_pressed"]
+[connection signal="pressed" from="ChatWindows/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="LevelUpWindow/Panel/TextureRect/VBoxContainer/CongratsButton" to="." method="_on_congrats_button_pressed"]

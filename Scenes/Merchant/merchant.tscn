@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cu1n4fh3m6e2e"]
+
+[ext_resource type="PackedScene" uid="uid://br7270jixcgi5" path="res://Scenes/UI/inventory.tscn" id="1_k0cd1"]
+
+[node name="Merchant" type="Node"]
+
+[node name="Inventory" parent="." instance=ExtResource("1_k0cd1")]
+starting_items = Array[Resource("res://Resources/Scripts/item.gd")]([])

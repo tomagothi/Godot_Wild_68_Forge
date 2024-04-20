@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="CraftingRecipe" load_steps=10 format=3 uid="uid://cvj10bc5tywkh"]
+
+[ext_resource type="Resource" uid="uid://buht1nkms6vxy" path="res://Resources/Items/CraftableItems/mystic_sword.tres" id="1_iw0cr"]
+[ext_resource type="Script" path="res://Resources/Scripts/crafting_recipe.gd" id="1_mr1p4"]
+[ext_resource type="Resource" uid="uid://dbwgoq6gyogcb" path="res://Resources/Items/CraftingMaterials/mystic_ingot.tres" id="2_d8722"]
+[ext_resource type="Script" path="res://Resources/Scripts/crafting_recipe_requirements.gd" id="3_2j4gt"]
+[ext_resource type="Resource" uid="uid://btf3ybec3jcg1" path="res://Resources/Items/CraftingMaterials/silver_ingot.tres" id="4_tlqm2"]
+[ext_resource type="Resource" uid="uid://vevnfhly6lij" path="res://Resources/Items/CraftingTools/mystic_blacksmith_hammer.tres" id="5_sjn7d"]
+
+[sub_resource type="Resource" id="Resource_kvwih"]
+script = ExtResource("3_2j4gt")
+item = ExtResource("2_d8722")
+quantity = 3
+consumed = true
+
+[sub_resource type="Resource" id="Resource_n2ubc"]
+script = ExtResource("3_2j4gt")
+item = ExtResource("4_tlqm2")
+quantity = 2
+consumed = true
+
+[sub_resource type="Resource" id="Resource_lximc"]
+script = ExtResource("3_2j4gt")
+item = ExtResource("5_sjn7d")
+quantity = 1
+consumed = false
+
+[resource]
+script = ExtResource("1_mr1p4")
+item = ExtResource("1_iw0cr")
+requirements = Array[ExtResource("3_2j4gt")]([SubResource("Resource_kvwih"), SubResource("Resource_n2ubc"), SubResource("Resource_lximc")])

@@ -1,0 +1,45 @@
+[gd_scene load_steps=24 format=3 uid="uid://cs4p1htx4e8hn"]
+
+[ext_resource type="Script" path="res://Scenes/Customer/customer.gd" id="1_08nsb"]
+[ext_resource type="Texture2D" uid="uid://br8w406b8pltd" path="res://Assets/Art/male_wizard.png" id="1_xcuwl"]
+[ext_resource type="Resource" uid="uid://4d20bqs6secd" path="res://Resources/Items/CraftableItems/short_sword.tres" id="2_e8aj3"]
+[ext_resource type="Resource" uid="uid://dnxhfx5aqk2aw" path="res://Resources/Items/CraftableItems/shield.tres" id="3_cb4ae"]
+[ext_resource type="Resource" uid="uid://bhlfc7brxqsxn" path="res://Resources/Items/CraftableItems/long_sword.tres" id="4_7a1a2"]
+[ext_resource type="Resource" uid="uid://5bk73qh68eyj" path="res://Resources/Items/CraftableItems/pick_axe.tres" id="5_j5lu0"]
+[ext_resource type="Resource" uid="uid://bq4dr1haxfqsk" path="res://Resources/Items/CraftableItems/battle_axe.tres" id="6_8tjbn"]
+[ext_resource type="Resource" uid="uid://bjrdifhjnq756" path="res://Resources/Items/CraftableItems/hand_axe.tres" id="7_4tmq6"]
+[ext_resource type="Resource" uid="uid://4f64m17p52gb" path="res://Resources/Items/CraftableItems/great_sword.tres" id="8_5nsdy"]
+[ext_resource type="Resource" uid="uid://buht1nkms6vxy" path="res://Resources/Items/CraftableItems/mystic_sword.tres" id="9_8uce2"]
+[ext_resource type="Texture2D" uid="uid://84sdxruwh7bp" path="res://Assets/Art/dwarf_warrior.png" id="10_ydod5"]
+[ext_resource type="Texture2D" uid="uid://dufvrbm4p5rrg" path="res://Assets/Art/female_commoner.png" id="11_giays"]
+[ext_resource type="Texture2D" uid="uid://soeob4ne57fu" path="res://Assets/Art/female_wizard.png" id="12_jiwn1"]
+[ext_resource type="Texture2D" uid="uid://jlbsx7moqr8b" path="res://Assets/Art/huntsman.png" id="13_earkd"]
+[ext_resource type="Texture2D" uid="uid://bkh6veosgq4py" path="res://Assets/Art/knight_1.png" id="14_4yns5"]
+[ext_resource type="Texture2D" uid="uid://b5aldhq4sfb7v" path="res://Assets/Art/male_commoner.png" id="15_8owpf"]
+[ext_resource type="Texture2D" uid="uid://dr3b3boxwyu8v" path="res://Assets/Art/male_laborer.png" id="16_1fmic"]
+[ext_resource type="Resource" uid="uid://cbkp652jhivvn" path="res://Resources/DialogOptions/frugal_poor_dialog.tres" id="18_yo2va"]
+[ext_resource type="Resource" uid="uid://c0vkci3j0ml30" path="res://Resources/DialogOptions/frugal_average_dialog.tres" id="19_sm0ad"]
+[ext_resource type="Resource" uid="uid://d3w1ewro8eltf" path="res://Resources/DialogOptions/frugal_wealthy_dialog.tres" id="20_wtjgu"]
+[ext_resource type="Resource" uid="uid://58jy0gx3bvbo" path="res://Resources/DialogOptions/normal_average_dialog.tres" id="21_g4cuc"]
+[ext_resource type="Resource" uid="uid://iihgwpxnkgue" path="res://Resources/DialogOptions/normal_wealthy_dialog.tres" id="22_yt01b"]
+[ext_resource type="Resource" uid="uid://kltmdigg0s72" path="res://Resources/DialogOptions/overspend_wealthy_dialog.tres" id="23_isnwb"]
+
+[node name="Customer" type="Node2D"]
+script = ExtResource("1_08nsb")
+level1_items = Array[Resource("res://Resources/Scripts/item.gd")]([ExtResource("2_e8aj3"), ExtResource("3_cb4ae")])
+level2_items = Array[Resource("res://Resources/Scripts/item.gd")]([ExtResource("2_e8aj3"), ExtResource("3_cb4ae"), ExtResource("4_7a1a2"), ExtResource("5_j5lu0")])
+level3_items = Array[Resource("res://Resources/Scripts/item.gd")]([ExtResource("6_8tjbn"), ExtResource("7_4tmq6"), ExtResource("4_7a1a2"), ExtResource("5_j5lu0")])
+level4_items = Array[Resource("res://Resources/Scripts/item.gd")]([ExtResource("6_8tjbn"), ExtResource("7_4tmq6"), ExtResource("8_5nsdy"), ExtResource("4_7a1a2")])
+level5_items = Array[Resource("res://Resources/Scripts/item.gd")]([ExtResource("6_8tjbn"), ExtResource("7_4tmq6"), ExtResource("8_5nsdy"), ExtResource("4_7a1a2"), ExtResource("9_8uce2")])
+available_sprites = Array[Texture2D]([ExtResource("10_ydod5"), ExtResource("11_giays"), ExtResource("12_jiwn1"), ExtResource("13_earkd"), ExtResource("14_4yns5"), ExtResource("15_8owpf"), ExtResource("16_1fmic"), ExtResource("1_xcuwl")])
+frugal_poor_dialog = ExtResource("18_yo2va")
+frugal_average_dialog = ExtResource("19_sm0ad")
+frugal_wealthy_dialog = ExtResource("20_wtjgu")
+normal_average_dialog = ExtResource("21_g4cuc")
+normal_wealthy_dialog = ExtResource("22_yt01b")
+overspend_wealthy_dialog = ExtResource("23_isnwb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("1_xcuwl")
+flip_h = true

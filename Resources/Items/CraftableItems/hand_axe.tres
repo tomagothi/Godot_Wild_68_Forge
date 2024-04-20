@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bjrdifhjnq756"]
+
+[ext_resource type="Texture2D" uid="uid://dsxtsp3fh1ksa" path="res://Assets/Art/hand_axe.png" id="1_8dlet"]
+[ext_resource type="Script" path="res://Resources/Scripts/item.gd" id="1_ndhbq"]
+
+[resource]
+script = ExtResource("1_ndhbq")
+display_name = "Hand Axe"
+item_icon = ExtResource("1_8dlet")
+base_cost = 20
+max_stack_size = 1
+item_type = 2

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://btf3ybec3jcg1"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/item.gd" id="1_yt6im"]
+[ext_resource type="Texture2D" uid="uid://rbuu4k205q7g" path="res://Assets/Art/silver.png" id="1_yyl38"]
+
+[resource]
+script = ExtResource("1_yt6im")
+display_name = "Silver Ingot"
+item_icon = ExtResource("1_yyl38")
+base_cost = 5
+max_stack_size = 12
+item_type = 0

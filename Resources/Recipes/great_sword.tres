@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="CraftingRecipe" load_steps=8 format=3 uid="uid://bpebxf5qwjtdg"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/crafting_recipe.gd" id="1_i0xir"]
+[ext_resource type="Resource" uid="uid://4f64m17p52gb" path="res://Resources/Items/CraftableItems/great_sword.tres" id="1_tva7r"]
+[ext_resource type="Resource" uid="uid://btf3ybec3jcg1" path="res://Resources/Items/CraftingMaterials/silver_ingot.tres" id="2_ih0lf"]
+[ext_resource type="Script" path="res://Resources/Scripts/crafting_recipe_requirements.gd" id="3_8cfbl"]
+[ext_resource type="Resource" uid="uid://7jhmm4npu8sn" path="res://Resources/Items/CraftingTools/blacksmith_hammer.tres" id="4_vmrh3"]
+
+[sub_resource type="Resource" id="Resource_urw2c"]
+script = ExtResource("3_8cfbl")
+item = ExtResource("2_ih0lf")
+quantity = 6
+consumed = true
+
+[sub_resource type="Resource" id="Resource_qgsu8"]
+script = ExtResource("3_8cfbl")
+item = ExtResource("4_vmrh3")
+quantity = 1
+consumed = false
+
+[resource]
+script = ExtResource("1_i0xir")
+item = ExtResource("1_tva7r")
+requirements = Array[ExtResource("3_8cfbl")]([SubResource("Resource_urw2c"), SubResource("Resource_qgsu8")])

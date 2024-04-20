@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemRecipe" load_steps=4 format=3 uid="uid://c02r0c7xfihuk"]
+
+[ext_resource type="Texture2D" uid="uid://c812ned6u52dx" path="res://Assets/Art/hand_axe_recipe.png" id="1_hc80n"]
+[ext_resource type="Resource" uid="uid://cnnmexieemueh" path="res://Resources/Recipes/hand_axe_recipe.tres" id="2_npx3b"]
+[ext_resource type="Script" path="res://Resources/Scripts/item_recipe.gd" id="3_1nrl0"]
+
+[resource]
+script = ExtResource("3_1nrl0")
+recipe = ExtResource("2_npx3b")
+display_name = "Hand Axe Plans"
+item_icon = ExtResource("1_hc80n")
+base_cost = 60
+max_stack_size = 1
+item_type = 3

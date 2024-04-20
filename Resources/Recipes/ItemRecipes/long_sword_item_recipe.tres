@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemRecipe" load_steps=4 format=3 uid="uid://bt3iguxqreo75"]
+
+[ext_resource type="Texture2D" uid="uid://b88bcc02x7mkw" path="res://Assets/Art/long_sword_recipe.png" id="1_s0twr"]
+[ext_resource type="Script" path="res://Resources/Scripts/item_recipe.gd" id="1_tm7yx"]
+[ext_resource type="Resource" uid="uid://bgocwtqn6b4oy" path="res://Resources/Recipes/long_sword_recipe.tres" id="2_sqwq8"]
+
+[resource]
+script = ExtResource("1_tm7yx")
+recipe = ExtResource("2_sqwq8")
+display_name = "Long Sword Plans"
+item_icon = ExtResource("1_s0twr")
+base_cost = 30
+max_stack_size = 1
+item_type = 3

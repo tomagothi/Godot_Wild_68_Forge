@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemRecipe" load_steps=4 format=3 uid="uid://d3b6xxokgjx6u"]
+
+[ext_resource type="Texture2D" uid="uid://md6u85shw6is" path="res://Assets/Art/great_sword_recipe.png" id="1_hw00e"]
+[ext_resource type="Resource" uid="uid://bpebxf5qwjtdg" path="res://Resources/Recipes/great_sword.tres" id="2_unbiw"]
+[ext_resource type="Script" path="res://Resources/Scripts/item_recipe.gd" id="3_jvge5"]
+
+[resource]
+script = ExtResource("3_jvge5")
+recipe = ExtResource("2_unbiw")
+display_name = "Great Sword Plans"
+item_icon = ExtResource("1_hw00e")
+base_cost = 100
+max_stack_size = 1
+item_type = 3

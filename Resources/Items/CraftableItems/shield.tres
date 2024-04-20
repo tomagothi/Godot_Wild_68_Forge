@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://dnxhfx5aqk2aw"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/item.gd" id="1_dq2p5"]
+[ext_resource type="Texture2D" uid="uid://dpu1440e4yod" path="res://Assets/Art/shield.png" id="1_ry8nj"]
+
+[resource]
+script = ExtResource("1_dq2p5")
+display_name = "Shield"
+item_icon = ExtResource("1_ry8nj")
+base_cost = 10
+max_stack_size = 1
+item_type = 2

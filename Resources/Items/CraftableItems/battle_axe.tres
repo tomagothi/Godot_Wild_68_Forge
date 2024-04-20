@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bq4dr1haxfqsk"]
+
+[ext_resource type="Texture2D" uid="uid://qbdx4kmm66hq" path="res://Assets/Art/battle_axe.png" id="1_hc1kc"]
+[ext_resource type="Script" path="res://Resources/Scripts/item.gd" id="1_p3psb"]
+
+[resource]
+script = ExtResource("1_p3psb")
+display_name = "Battle Axe"
+item_icon = ExtResource("1_hc1kc")
+base_cost = 30
+max_stack_size = 1
+item_type = 0

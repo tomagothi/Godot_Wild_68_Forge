@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://b3baefd3exjho"]
+
+[ext_resource type="Texture2D" uid="uid://dxvn82o3ptetk" path="res://Assets/Art/gold.png" id="1_1x0gg"]
+[ext_resource type="Script" path="res://Resources/Scripts/item.gd" id="1_hucux"]
+
+[resource]
+script = ExtResource("1_hucux")
+display_name = "Gold Ingot"
+item_icon = ExtResource("1_1x0gg")
+base_cost = 8
+max_stack_size = 12
+item_type = 0
